@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants.dart';
 import '../../../core/widgets/primary_button.dart';
+import '../movie_flow_controller.dart';
 
-class LandingScreen extends StatelessWidget {
-  final VoidCallback previousPage, nextPage;
-
-  const LandingScreen({
-    Key? key,
-    required this.previousPage,
-    required this.nextPage,
-  }) : super(key: key);
+class LandingScreen extends ConsumerWidget {
+  const LandingScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
@@ -25,10 +21,10 @@ class LandingScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const Spacer(),
-            Image.asset("images/movie.png"),
+            Image.asset("assets/images/movie.png"),
             const Spacer(),
             PrimaryButton(
-              onPressed: nextPage,
+              onPressed: ref.read(movieFlowControllerProvider.notifier).nextPage,
               text: "Get Started",
             ),
             const SizedBox(height: kMediumSpacing),
