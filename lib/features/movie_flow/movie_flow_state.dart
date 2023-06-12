@@ -6,7 +6,7 @@ import '../result/movie_model.dart';
 
 const movieMock = MovieModel(
   title: "The hulk",
-  overView:
+  overview:
       "Bruce Banner, a genetic research with a tragic past, suffer an accident that causes him etc.",
   voteAverage: 4.0,
   genres: [GenreModel(name: "Action"), GenreModel(name: "Fantasy")],

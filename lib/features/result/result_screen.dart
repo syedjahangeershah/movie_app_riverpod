@@ -43,7 +43,7 @@ class ResultScreen extends ConsumerWidget {
                 Padding(
                   padding: const EdgeInsets.all(12),
                   child: Text(
-                    ref.watch(movieFlowControllerProvider).movie.overView,
+                    ref.watch(movieFlowControllerProvider).movie.overview,
                   ),
                 )
               ],
